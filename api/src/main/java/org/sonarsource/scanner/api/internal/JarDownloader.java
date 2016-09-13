@@ -36,6 +36,7 @@ class JarDownloader {
   }
 
   List<File> download() {
+    logger.warn("JarDownloader"+serverConnection.getBaseUrlWithoutTrailingSlash());
     return new Jars(serverConnection, new JarExtractor(), logger, props).download();
   }
 }
