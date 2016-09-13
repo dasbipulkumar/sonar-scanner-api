@@ -78,6 +78,7 @@ class Jars {
       String libs = connection.downloadString("/batch_bootstrap/index");
       logger.debug("Get bootstrap completed");
       String[] lines = libs.split("[\r\n]+");
+      logger.warn("download Url" + connection.getBaseUrlWithoutTrailingSlash());
       BatchFileDownloader batchFileDownloader = new BatchFileDownloader(connection);
       for (String line : lines) {
         line = line.trim();
