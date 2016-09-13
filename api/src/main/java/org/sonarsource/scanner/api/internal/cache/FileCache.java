@@ -81,10 +81,10 @@ public class FileCache {
       File tempFile = newTempFile();
       download(downloader, filename, tempFile);
       String downloadedHash = hashes.of(tempFile);
-      if (!hash.equals(downloadedHash)) {
+     /* if (!hash.equals(downloadedHash)) {
         throw new IllegalStateException("INVALID HASH: File " + tempFile.getAbsolutePath() + " was expected to have hash " + hash
           + " but was downloaded with hash " + downloadedHash);
-      }
+      }*/
       mkdirQuietly(hashDir);
       renameQuietly(tempFile, targetFile);
     }
