@@ -46,7 +46,23 @@ class ServerConnection {
 
   private final Logger logger;
 
-  ServerConnection(String baseUrl, String userAgent, Logger logger) {
+    public String getBaseUrlWithoutTrailingSlash() {
+        return baseUrlWithoutTrailingSlash;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public OkHttpClient getHttpClient() {
+        return httpClient;
+    }
+
+    public Logger getLogger() {
+        return logger;
+    }
+
+    ServerConnection(String baseUrl, String userAgent, Logger logger) {
     this.logger = logger;
     this.baseUrlWithoutTrailingSlash = removeTrailingSlash(baseUrl);
     this.userAgent = userAgent;
