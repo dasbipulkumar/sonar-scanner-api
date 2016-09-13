@@ -31,6 +31,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.sonarsource.scanner.api.ScannerProperties;
 import org.sonarsource.scanner.api.internal.cache.Logger;
 
 import static java.lang.String.format;
@@ -61,6 +62,13 @@ class ServerConnection {
     String userAgent = format("%s/%s", props.getProperty(RUNNER_APP), props.getProperty(RUNNER_APP_VERSION));
     return new ServerConnection(serverUrl, userAgent, logger);
   }
+
+  public static ServerConnection createForJarDownload(Properties props, Logger logger) {
+    String serverUrl = props.getProperty(ScannerProperties.JAR_HOST_URL);
+    String userAgent = format("%s/%s", props.getProperty(RUNNER_APP), props.getProperty(RUNNER_APP_VERSION));
+    return new ServerConnection(serverUrl, userAgent, logger);
+  }
+
 
   /**
    * Download file

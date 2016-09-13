@@ -31,6 +31,9 @@ public interface ScannerProperties {
    */
   String HOST_URL = "sonar.host.url";
 
+
+   String JAR_HOST_URL = "sonar.host.jar.url";
+
   /**
    * Task to execute, "scan" by default
    */
