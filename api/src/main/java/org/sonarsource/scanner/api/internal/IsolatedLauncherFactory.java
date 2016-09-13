@@ -61,7 +61,7 @@ public class IsolatedLauncherFactory {
       }
       return new SimulatedLauncher(version, logger);
     }
-    ServerConnection serverConnection = ServerConnection.create(props, logger);
+    ServerConnection serverConnection = ServerConnection.createForJarDownload(props, logger);
     JarDownloader jarDownloader = new JarDownloader(serverConnection, logger, props);
 
     return createLauncher(jarDownloader, rules);

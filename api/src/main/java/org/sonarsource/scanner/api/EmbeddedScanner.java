@@ -185,6 +185,7 @@ public class EmbeddedScanner {
 
   private void initGlobalDefaultValues() {
     setGlobalDefaultValue(ScannerProperties.HOST_URL, "http://localhost:9000");
+    setGlobalDefaultValue(ScannerProperties.JAR_HOST_URL, "http://localhost:9000");
     setGlobalDefaultValue(InternalProperties.RUNNER_APP, "SonarQubeRunner");
     setGlobalDefaultValue(InternalProperties.RUNNER_APP_VERSION, ScannerApiVersion.version());
   }
